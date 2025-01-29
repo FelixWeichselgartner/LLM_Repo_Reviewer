@@ -15,7 +15,7 @@ logging.basicConfig(
 MAX_LINES = 1000
 MAX_BYTES = 100 * 1024  # 100 KB
 
-EXCLUDED_EXTENSIONS = {".pyc", ".tar", '.7z', ".zip", ".mp4", ".mp3", ".pdf", '.jpg', '.png', 'tar.lz'}
+EXCLUDED_EXTENSIONS = {".pyc", ".tar", '.7z', ".zip", ".mp4", ".mp3", ".pdf", '.jpg', '.png', 'tar.lz', '.exe'}
 EXCLUDED_FILES = {"license", "license.md", 'license.txt', '.gitignore'}
 MAX_DEPTH = 2
 
@@ -114,10 +114,10 @@ def handle_repos(repo_paths):
                         "Here is the file tree and contents of the repository:\n\n" +
                         json.dumps(repo_data, indent=2) +
                         "\n\nPlease evaluate this repository on the following criteria:\n" +
-                        "- Monetary Potential\n" +
+                        "- Monetary Potential, i.e. could this be turned or sold as a product. \n" +
                         "- Uniqueness\n" +
                         "- Quality\n" +
-                        "Provide a rating for each criterion and any additional insights you may have."
+                        "Provide a rating (from 1 to 10) for each criterion and any additional insights you may have."
                     ),
                 }
             ]
